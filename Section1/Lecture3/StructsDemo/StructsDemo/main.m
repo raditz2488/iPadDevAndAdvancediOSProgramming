@@ -31,7 +31,8 @@ int main(int argc, const char * argv[]) {
 }
 
 float area(Circle aCircle) {
-    return powf(M_PI * aCircle.radius, 2);
+    float radiusSquare = powf(aCircle.radius, 2);
+    return M_PI * radiusSquare;
 }
 
 void newCircle(Circle *circle, int r, CGPoint c) {
