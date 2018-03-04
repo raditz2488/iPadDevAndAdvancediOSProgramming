@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Geometry.h"
 
 typedef struct {
     int radius;
@@ -26,6 +27,14 @@ int main(int argc, const char * argv[]) {
         
         //print area of circle using powf which is floating point power function
         printf("area = %f\n", area(myCircle));
+        
+        CGPoint a = CGPointMake(2, 6);
+        CGPoint b = CGPointMake(5, 2);
+        
+        Geometry *geo = [[Geometry alloc] init];
+        [geo makeLineFrom:a to:b];
+        printf("Slope = %f\n",[geo slope:geo.line]);
+        printf("Length = %f\n",[geo length:geo.line]);
     }
     return 0;
 }
